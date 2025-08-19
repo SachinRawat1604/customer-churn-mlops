@@ -1,0 +1,31 @@
+name: CI - Model Training
+
+on:
+    # Trigger the workflow on pushes to the main branch
+    push:
+        branches: [ main ]
+
+jobs:
+    train:
+        runs-on: ubuntu-latest # Use a Linux virtual machine
+
+        steps:
+            # Step 1: Check out the code from the repository
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            # Step 2: Set up a Python environment
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.9' # Specify Python version
+            # Step 3: Install the project dependencies
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+
+            # Step 4: Run the training script
+            # The script uses the data tracked by DVC that was checked in
+            - name: Run training script
+              run: python src/train.py

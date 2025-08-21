@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 
 # Get the directory of the current script
-script_dir = Path(__file__).parent
+script_dir = Path(__file__).resolve().parent
 # Construct the absolute path to the data file
 data_path = script_dir / '..' / 'data' / 'raw' / 'WA_Fn-UseC_-Telco-Customer-Churn.csv'
 

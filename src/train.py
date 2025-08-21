@@ -4,11 +4,17 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import joblib # For saving the model
 import os
+from pathlib import Path
+
+# Get the directory of the current script
+script_dir = Path(__file__).parent
+# Construct the absolute path to the data file
+data_path = script_dir / '..' / 'data' / 'raw' / 'WA_Fn-UseC_-Telco-Customer-Churn.csv'
 
 
 # ----- Load Data -----
 print("Loading data....")
-df = pd.read_csv('data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv')
+df = pd.read_csv(data_path)
 
 # ----- Preprocessing -----
 print("Preprocessing data....")

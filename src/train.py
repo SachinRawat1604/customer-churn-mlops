@@ -8,7 +8,7 @@ import os
 
 # ----- Load Data -----
 print("Loading data....")
-df = pd.read_csv('C:/Users/sachi/OneDrive/Desktop/customer-churn-mlops/data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv')
+df = pd.read_csv('data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv')
 
 # ----- Preprocessing -----
 print("Preprocessing data....")

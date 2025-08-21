@@ -1,0 +1,8 @@
+.git
+.gitignore
+.dvc/
+.github/
+notebooks/
+venv/
+__pycache__/
+*.pyc

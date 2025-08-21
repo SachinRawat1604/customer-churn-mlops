@@ -28,5 +28,5 @@ EXPOSE 8000
 
 # command to run the application when the container launches
 # we use 0.0.0.0 to make the server accessible from outside the container
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"]
 
